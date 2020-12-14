@@ -24,3 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+
+Route::get('categorie_comptes','Categorie_comptesController@index');
+Route::get('categorie_comptes/create','Categorie_comptesController@create');
+Route::get('categorie_comptes/edit/{categorie_compte}','Categorie_comptesController@edit');
+Route::get('categorie_comptes/{categorie_compte}','Categorie_comptesController@show');
+Route::post('categorie_comptes','Categorie_comptesController@store');
+Route::post('categorie_comptes/destroy/{categorie_compte}','Categorie_comptesController@destroy');
+Route::put('categorie_comptes/{categorie_compte}','Categorie_comptesController@update');
