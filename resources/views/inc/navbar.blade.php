@@ -193,14 +193,11 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
         
-                                    <li><a class="logout" href="{{ route('login') }}">Logout</a></li>
+                                    <li><a class="logout" href="{{ route('login') }}">Deconnexion</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
 									</form>
-									<br>
-                                    @can('manage-users')
-                                    <a href="{{route('admin.users.index')}}" class="dropdown-item">Liste des utilisateurs</a>
-                                    @endcan
+								
         
       </div>
     </header>
