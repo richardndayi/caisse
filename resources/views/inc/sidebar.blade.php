@@ -3,15 +3,42 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-                 
+          <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle page-header " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                     <span class="caret color_siew">{{ Auth::user()->name }}</span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-left  color_id" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Deconnexion') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+									</form>
+									<br>
+                                    @can('manage-users')
+                                    <a href="{{route('admin.users.index')}}" class="dropdown-item">Liste des utilisateurs</a>
+                                    @endcan
+                                </div>
+                            </li> 
 			<li class="nav-item dropdown">
       <li class="nav-item dropdown">
                                 
 
+
+     
+      
+        
+
+
+
     
                             </li>
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="{{url('/')}}">
               <i class="fa fa-dashboard"></i>
               <span>Accueil</span>
               </a>
@@ -24,13 +51,13 @@
               <span>Guichets</span>
               </a>
             <ul class="sub">
-            <li><a class="" href="{{ url('guichet')}}">
+            <li><a class="" href="{{ url('guichets')}}">
 						<span class="fa fa-cog">&nbsp;</span> Guichet
 					</a></li>
           <li><a class="" href="{{ url('caisse')}}">
 						<span class="fa fa-bar-chart">&nbsp;</span> Caisse
 					</a></li>
-          <li><a class="" href="{{ url('detaille_caisse')}}">
+          <li><a class="" href="{{ url('detaille_caisses')}}">
 						<span class="fa fa-bar-chart">&nbsp;</span> Detaille caisse
 					</a></li>
          
@@ -44,7 +71,7 @@
               <span>Comptes</span>
               </a>
             <ul class="sub">
-            <li><a class="" href="{{ url('categorie_compte')}}">
+            <li><a class="" href="{{ url('categorie_comptes')}}">
 						<span class="fa fa-bar-chart">&nbsp;</span> Categorie compte
 					</a></li>
           <li><a class="" href="{{ url('comptes')}}">
@@ -66,9 +93,7 @@
                                     <li><a class="" href="{{ url('caisse_utilisateurs')}}">
 						<span class="fa fa-user">&nbsp;</span> Caisse utilisateurs
 					</a></li>
-          <li><a class="" href="{{route('admin.users.index')}}">
-						<span class="fa fa-user">&nbsp;</span>  utilisateurs
-					</a></li>
+          
           <!-- <li><a class="" href="{{ url('roles')}}">
 						<span class="fa fa-user">&nbsp;</span> Roles
 					</a></li>
