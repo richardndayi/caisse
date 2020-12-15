@@ -34,10 +34,10 @@ Route::resource('guichets','GuichetsController'); //Route pour un Guichet
 
 Route::get('caisses','CaisseController@index');
 Route::get('caisses/create','CaisseController@create');
-Route::get('caisses/edit/{compte}','CaisseController@edit');
+Route::get('caisses/edit/{caisse}','CaisseController@edit');
 Route::get('caisses/{caisse}','CaisseController@show');
 Route::post('caisses','CaisseController@store');
-Route::post('caisses/destroy/{compte}','CaisseController@destroy');
+Route::post('caisses/destroy/{caisse}','CaisseController@destroy');
 Route::put('caisses/{caisse}','CaisseController@update');
 Route::resource('caisses','CaisseController'); //Route pour une caisse
 

@@ -57,7 +57,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6 ">
                                         <label for="description"><strong> Solde de la caisse</strong></label>
-                                        <textarea name="solde" id="solde_ouverture" value="" rows="5" cols="100"
+                                        <textarea name="solde" id="solde" value="" rows="5" cols="100"
                                             class="form-control" class="@error('solde') is-danger @enderror"
                                             placeholder="Tapez le solde de la caisse" aria-describedby="helpId">
                                         {{ $caisse->solde}}
@@ -83,18 +83,7 @@
                                     </select>
                                 </div>
 
-                                  {{-- <div class="form-row">
-                                    <div class="form-group col-md-6 ">
-                                        <label> Numero du Guichet</label>
-                                        <select name="guichet_id" id="" style="width:300px; height:35px ;background:gray; color:white"class="form-control">
-                                            @foreach ($guichets as $guichet)
-                                                <option value="{{ $guichet->id }}"{!!$caisse->guichet_id ==
-                                                    $guichet->id ? 'selected="selected"' : ''
-                                                    !!}>{{ $guichet->nom_guichet }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div> --}}
-
+                                 
                                 </div>
                         </div>
                         </form>
