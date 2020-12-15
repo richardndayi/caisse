@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Categorie_compte;
+use App\Compte;
 use Illuminate\Http\Request;
 
 class Categorie_comptesController extends Controller
@@ -53,6 +54,35 @@ class Categorie_comptesController extends Controller
     
     }
 
+    public function storecompte(Request $request){
+    $request->validate([
+        'categorie_compte_id' =>'required',
+        
+        'numero_compte' =>'required',
+        'nom_compte' =>'required',
+        'lieu_travail' =>'required',
+        'nif' =>'required',
+        'rc' =>'required',
+        'solde' =>'required',
+        'telephone' =>'required',
+        'email' =>'required'
+
+    ]);
+    $compte= new Compte();
+    $compte->categorie_compte_id= $request->categorie_compte_id;
+   
+    $compte->numero_compte= $request->numero_compte;
+    $compte->nom_compte= $request->nom_compte;
+    $compte->lieu_travail= $request->lieu_travail;
+    $compte->nif= $request->nif;
+    $compte->rc= $request->rc;
+    $compte->solde= $request->solde;
+    $compte->telephone= $request->telephone;
+    $compte->email= $request->email;
+
+    $compte->save();
+    return $this->show($request->categorie_compte_id);
+}
     /**
      * Display the specified resource.
      *
@@ -62,9 +92,12 @@ class Categorie_comptesController extends Controller
     public function show($id)
     {
         //
-        $categorie_comptes = Categorie_compte::all();
-        return view('categorie_comptes/show',['categorie_comptes'=>$categorie_comptes]);
+        $category_comptes = Categorie_compte::with(['comptes'])->find($id);
+        return view('categorie_comptes.show',compact('category_comptes'));
     }
+
+  
+
 
     /**
      * Show the form for editing the specified resource.
