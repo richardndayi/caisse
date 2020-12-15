@@ -1,4 +1,4 @@
-@extends('templates.default')
+@extends('templates.default_layouts')
 @section('content')
     <div id="page-wrapper">
         <div id="page-inner">
@@ -36,10 +36,10 @@
 
                 @csrf
                 <div class="form-group">
-                    <label>Nom :</label>
-                    <input type="text" style="width:11%;height:7%" name="nom_guichet" class="form-control"
-                        class="@error('nom_guichet') is-invalid @enderror" placeholder="" value="">
-                    @error('nom_guichet')
+                    <label>Nomero du Guichet :</label>
+                    <input type="text" style="width:11%;height:7%" name="nomero_guichet" class="form-control"
+                        class="@error('nomero_guichet') is-invalid @enderror" placeholder="" value="">
+                    @error('nomero_guichet')
                     <div class="btn btn-danger">{{ $message }}</div>
                     @enderror
                 </div>

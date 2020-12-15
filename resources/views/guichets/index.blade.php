@@ -1,4 +1,4 @@
-@extends('templates.default')
+@extends('templates.default_layouts')
 @section('content')
 
 
@@ -33,10 +33,10 @@
 
                 @csrf
                 <div class="form-group">
-                    <label>Nom :</label>
-                    <input type="text" name="nom_guichet" class="form-control"
-                        class="@error('nom_guichet') is-invalid @enderror" placeholder="" value="">
-                    @error('nom_guichet')
+                    <label>Nomero du Guichet :</label>
+                    <input type="text" name="nomero_guichet" class="form-control"
+                        class="@error('nomero_guichet') is-invalid @enderror" placeholder="" value="">
+                    @error('nomero_guichet')
                     <div class="btn btn-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -52,7 +52,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nom du Guichet</th>
+                                <th>Nomero du Guichet</th>
                                 <th>Options</th>
                                 <th>Options</th>
                             </tr>
@@ -61,7 +61,7 @@
                             @foreach ($guichets as $guichet)
                                 <tr>
                                     <td>{{ $guichet->id }}</td>
-                                    <td>{{ $guichet->nom_guichet}}</td>
+                                    <td>{{ $guichet->nomero_guichet}}</td>
                                     <td>
 
                                         <a href="{{ route('guichets.edit', $guichet->id) }}"

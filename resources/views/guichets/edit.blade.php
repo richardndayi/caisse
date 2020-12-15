@@ -1,4 +1,4 @@
-@extends('templates.default')
+@extends('templates.default_layouts')
 @section('content')
 
 
@@ -29,11 +29,11 @@
                 @method('PUT')
                 @csrf
                 <div class="form-group">
-                    <label>Nom du guichet</label>
-                    <input type="text" name="nom_guichet" class="form-control"
-                        class="@error('nom_guichet') is-invalid @enderror" placeholder=""
-                        value="{{ $guichet->nom_guichet}}">
-                    @error('nom_guichet')
+                    <label>Nomero du guichet</label>
+                    <input type="text" name="nomero_guichet" class="form-control"
+                        class="@error('nomero_guichet') is-invalid @enderror" placeholder=""
+                        value="{{ $guichet->nomero_guichet}}">
+                    @error('nomero_guichet')
                     <button class="btn-danger">{{$message}}</button>
                    @enderror
 
