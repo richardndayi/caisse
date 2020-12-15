@@ -30,4 +30,4 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 
 
 Route::get('home','HomeController@index');
-Route::resource('guichets','GuichetController'); //Route pour un Guichet
+Route::resource('guichets','GuichetsController'); //Route pour un Guichet
