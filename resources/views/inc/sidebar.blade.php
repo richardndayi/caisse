@@ -54,7 +54,7 @@
             <li><a class="" href="{{url('guichets')}}">
 						<span class="fa fa-cog">&nbsp;</span> Guichet
 					</a></li>
-          <li><a class="" href="{{ url('caisse')}}">
+          <li><a class="" href="{{ url('caisses')}}">
 						<span class="fa fa-bar-chart">&nbsp;</span> Caisse
 					</a></li>
           <li><a class="" href="{{ url('detaille_caisses')}}">

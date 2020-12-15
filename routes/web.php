@@ -32,7 +32,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 Route::get('home','HomeController@index');
 Route::resource('guichets','GuichetsController'); //Route pour un Guichet
 
-Route::get('caisses','CaissseController@index');
+Route::get('caisses','CaisseController@index');
 Route::get('caisses/create','CaisseController@create');
 Route::get('caisses/edit/{compte}','CaisseController@edit');
 Route::get('caisses/{caisse}','CaisseController@show');
