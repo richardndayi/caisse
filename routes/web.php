@@ -24,3 +24,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+
+
+
+
+
+Route::get('home','HomeController@index');
+Route::resource('guichets','GuichetsController'); //Route pour un Guichet
+
+Route::get('caisses','CaisseController@index');
+Route::get('caisses/create','CaisseController@create');
+Route::get('caisses/edit/{caisse}','CaisseController@edit');
+Route::get('caisses/{caisse}','CaisseController@show');
+Route::post('caisses','CaisseController@store');
+Route::post('caisses/destroy/{caisse}','CaisseController@destroy');
+Route::put('caisses/{caisse}','CaisseController@update');
+Route::resource('caisses','CaisseController'); 
+//Route::resource('caisses','CaisseController');//Route pour une caisse
