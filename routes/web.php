@@ -25,10 +25,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
     Route::resource('users','UsersController');
 });
 
-
-
-
-
 Route::get('home','HomeController@index');
 Route::resource('guichets','GuichetsController'); //Route pour un Guichet
 
@@ -41,3 +37,24 @@ Route::post('caisses/destroy/{caisse}','CaisseController@destroy');
 Route::put('caisses/{caisse}','CaisseController@update');
 Route::resource('caisses','CaisseController'); 
 //Route::resource('caisses','CaisseController');//Route pour une caisse
+
+Route::get('categorie_comptes','Categorie_comptesController@index');
+Route::get('categorie_comptes/create','Categorie_comptesController@create');
+Route::get('categorie_comptes/edit/{categorie_compte}','Categorie_comptesController@edit');
+Route::get('categorie_comptes/{categorie_compte}','Categorie_comptesController@show');
+Route::post('categorie_comptes','Categorie_comptesController@store');
+Route::post('categorie_compte','Categorie_comptesController@storecompte');
+Route::get('categorie_comptes/show/{categorie_compte}','Categorie_comptesController@show');
+Route::post('categorie_comptes/destroy/{categorie_compte}','Categorie_comptesController@destroy');
+Route::put('categorie_comptes/{categorie_compte}','Categorie_comptesController@update');
+
+
+Route::get('comptes','ComptesController@index');
+Route::get('comptes/create','ComptesController@create');
+Route::get('comptes/edit/{compte}','ComptesController@edit');
+Route::get('comptes/{compte}','ComptesController@show');
+Route::post('comptes','ComptesController@store');
+Route::post('comptes/destroy/{compte}','ComptesController@destroy');
+Route::put('comptes/{compte}','ComptesController@update');
+
+
