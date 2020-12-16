@@ -65,7 +65,7 @@
                                             <td> {{ $caisse->nomero_guichet }}</td>
 
                                            
-                                            <td><a href="{{ route('caisses.update', $caisse->id)}}" class="btn btn-warning btn-sm">
+                                            <td><a href="/caisses/{{$caisse->id}}/edit" class="btn btn-warning btn-sm">
                                                     <span class="glyphicon glyphicon-edit">Edit</span></a>
                                             </td>
                                             <td>
