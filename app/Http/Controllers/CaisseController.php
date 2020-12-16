@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Database\Seeder;
 namespace App\Http\Controllers;
 use App\Caisse;
 use App\Guichet;
@@ -35,6 +34,7 @@ class CaisseController extends Controller
      */
     public function create()
     {
+       
         $guichets = Guichet::all();
        return view('caisses.create',[
            'guichets'=>$guichets
@@ -83,14 +83,14 @@ class CaisseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( $caisse)
     {
-        $guichet = Guichet::all();
-        $caisse = Caisse::find($id);
-        return view('caisses.edit',[
-        'caisse'=>$caisse,
-        'guichet'=>$guichet,
-        
+          # code...
+    $guichets= Guichet::all();
+    $caisse= Caisse::find($caisse);
+    return view('caisses/edit', [
+    'caisse'=>$caisse,
+    'guichets'=>$guichets,
         ]);
     }
 
