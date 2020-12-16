@@ -39,5 +39,5 @@ Route::get('caisses/{caisse}','CaisseController@show');
 Route::post('caisses','CaisseController@store');
 Route::post('caisses/destroy/{caisse}','CaisseController@destroy');
 Route::put('caisses/{caisse}','CaisseController@update');
-Route::resource('caisses','CaisseController'); //Route pour une caisse
-
+Route::resource('caisses','CaisseController'); 
+//Route::resource('caisses','CaisseController');//Route pour une caisse
