@@ -126,7 +126,7 @@ public function destroy(Caisse_detail $caisse_detail)
 
     $caisse_detail= Caisse_detail::find($caisse_detail->id);
   $caisse_detail->delete();
-  return redirect('caisse_details')->with('status','la caisse a ete suprimme avec succes!!!');
+  return redirect('caisse_details');
 }
 
 
